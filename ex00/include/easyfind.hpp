@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 22:22:57 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/08/05 14:35:57 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/08/07 09:35:33 by sebasnadu        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ struct ContainerType< std::list<T> > {
 template <typename T>
 struct ContainerType< std::deque<T> > {
 	static char const *name() { return "Deque"; }
+};
+
+template <typename T>
+struct ContainerType< std::set<T> > {
+	static char const *name() { return "Set"; }
 };
 
 template <typename T>

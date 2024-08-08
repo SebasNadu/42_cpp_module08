@@ -13,10 +13,10 @@ CYAN        := \033[0;96m
 WHITE       := \033[0;97m
 	
 ################################################################################
-##                                  EASYFIND                                  ##
+##                                    SPAN                                    ##
 ################################################################################
 
-NAME							:= easyfind
+NAME							:= span
 CXX								:= c++
 RM								:= rm -rf
 	
@@ -28,12 +28,12 @@ OBJ_DIR						:= obj
 SRC_DIR						:= src
 INC_DIR						:= include
 
-vpath %.cpp $(SRC_DIR)
 vpath %.hpp $(INC_DIR)
+vpath %.cpp $(SRC_DIR)
 vpath %.o $(OBJ_DIR)
 
-HEADERS						:= easyfind.hpp colors.hpp
-SOURCE						:= main.cpp
+HEADERS						:= Span.hpp colors.hpp
+SOURCE						:= main.cpp Span.cpp
 OBJECTS						:= $(addprefix $(OBJ_DIR)/, $(SOURCE:.cpp=.o))
 	
 ################################################################################
