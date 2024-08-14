@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 22:22:22 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/08/05 14:37:28 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/08/14 14:10:05 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	testVector(void) {
 		vec[i] = newValue--;
 	std::sort(vec.begin(), vec.end());
 	std::cout << "Vector: " GREEN;
-	std::copy(vec.begin(), vec.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(vec);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); it++)
@@ -33,7 +33,7 @@ void	testVector(void) {
 	vec.push_back(42);
 	vec.push_back(42);
 	std::cout << "Vector: " GREEN;
-	std::copy(vec.begin(), vec.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(vec);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); it++)
@@ -62,7 +62,7 @@ void	testList(void) {
 		*it = newValue--;
 	lst.sort();
 	std::cout << "List: " GREEN;
-	std::copy(lst.begin(), lst.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(lst);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::list<int>::iterator it = lst.begin(); it != lst.end(); it++)
@@ -73,7 +73,7 @@ void	testList(void) {
 	lst.push_back(42);
 	lst.push_back(42);
 	std::cout << "List: " GREEN;
-	std::copy(lst.begin(), lst.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(lst);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::list<int>::iterator it = lst.begin(); it != lst.end(); it++)
@@ -102,7 +102,7 @@ void	testDeque(void) {
 		*it = newValue--;
 	std::sort(deq.begin(), deq.end());
 	std::cout << "Deque: " GREEN;
-	std::copy(deq.begin(), deq.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(deq);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::deque<int>::iterator it = deq.begin(); it != deq.end(); it++)
@@ -113,7 +113,7 @@ void	testDeque(void) {
 	deq.push_back(42);
 	deq.push_back(42);
 	std::cout << "Deque: " GREEN;
-	std::copy(deq.begin(), deq.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(deq);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::deque<int>::iterator it = deq.begin(); it != deq.end(); it++)
@@ -140,7 +140,7 @@ void	testSet(void) {
 	for (int i = 8; i > 0; i--)
 		set.insert(i);
 	std::cout << "Set: " GREEN;
-	std::copy(set.begin(), set.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(set);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::set<int>::iterator it = set.begin(); it != set.end(); it++)
@@ -149,7 +149,7 @@ void	testSet(void) {
 	set.insert(42);
 	set.insert(42);
 	std::cout << "Set: " GREEN;
-	std::copy(set.begin(), set.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(set);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::set<int>::iterator it = set.begin(); it != set.end(); it++)
@@ -173,7 +173,7 @@ void	testSet(void) {
 	for (int i = 8; i > 0; i--)
 		set2.insert(i);
 	std::cout << "\nSet2: " GREEN;
-	std::copy(set2.begin(), set2.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(set2);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::set<int>::iterator it = set2.begin(); it != set2.end(); it++)
@@ -182,7 +182,7 @@ void	testSet(void) {
 	set2.insert(42);
 	set2.insert(42);
 	std::cout << "Set2: " GREEN;
-	std::copy(set2.begin(), set2.end(), std::ostream_iterator<int>(std::cout, " "));
+	easyprint(set2);
 	std::cout << RESET << std::endl;
 	std::cout << "Address: " GREEN;
 	for (std::set<int>::iterator it = set2.begin(); it != set2.end(); it++)

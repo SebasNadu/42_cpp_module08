@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/04 22:22:57 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/08/07 09:35:33 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/08/14 14:09:17 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 #include <set>
 #include <algorithm>
 #include <stdexcept>
+#include <sstream>
+#include <iostream>
 
 template <typename T>
 struct ContainerType {
@@ -47,11 +49,21 @@ struct ContainerType< std::set<T> > {
 template <typename T>
 typename T::iterator easyfind(T &container, int const &value) {
 	typename T::iterator it = std::find(container.begin(), container.end(), value);
-	if (it == container.end())
-		throw std::runtime_error("The value " + std::to_string(value)
-			+ " was not found in " + ContainerType<T>::name() + " container.");
+	if (it == container.end()) {
+		std::ostringstream oss;
+		oss << value;
+		throw std::runtime_error("The value " + oss.str()
+				+ " was not found in " + ContainerType<T>::name() + " container.");
+	}
 			
 	return it;
+}
+
+template <typename T>
+void easyprint(T &container) {
+	for (typename T::iterator it = container.begin(); it != container.end(); ++it) {
+		std::cout << *it << ' ';
+	}
 }
 
 struct DescendingComparator {
