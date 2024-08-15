@@ -6,7 +6,7 @@
 /*   By: sebasnadu <johnavar@student.42berlin.de>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/08 13:01:09 by sebasnadu         #+#    #+#             */
-/*   Updated: 2024/08/09 12:10:27 by sebasnadu        ###   ########.fr       */
+/*   Updated: 2024/08/15 16:37:37 by johnavar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <vector>
 #include <list>
 #include <string>
+#include <algorithm>
 
 template<typename T, typename C>
 void	printWithIterators(typename MutantStack<T, C>::const_iterator it,
